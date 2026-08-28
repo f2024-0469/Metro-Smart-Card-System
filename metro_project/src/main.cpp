@@ -37,19 +37,33 @@ static std::string readLine(const char* prompt) {
 }
 
 static int readInt(const char* prompt) {
-    std::string value = readLine(prompt);
-    std::stringstream ss(value);
-    int result = 0;
-    ss >> result;
-    return result;
+    while (true) {
+        std::string value = readLine(prompt);
+        std::stringstream ss(value);
+        int result = 0;
+        char extra = '\0';
+
+        if ((ss >> result) && !(ss >> extra)) {
+            return result;
+        }
+
+        std::cout << "ERROR invalid_integer\n";
+    }
 }
 
 static double readDouble(const char* prompt) {
-    std::string value = readLine(prompt);
-    std::stringstream ss(value);
-    double result = 0.0;
-    ss >> result;
-    return result;
+    while (true) {
+        std::string value = readLine(prompt);
+        std::stringstream ss(value);
+        double result = 0.0;
+        char extra = '\0';
+
+        if ((ss >> result) && !(ss >> extra)) {
+            return result;
+        }
+
+        std::cout << "ERROR invalid_number\n";
+    }
 }
 
 static void runInteractive(MetroSystem& system) {
