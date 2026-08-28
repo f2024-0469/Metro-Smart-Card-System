@@ -180,3 +180,17 @@ Before handing in the project:
 ## Academic honesty
 
 Follow the exact disclosure/attribution rule in the course handout for any external or AI assistance. The final submission should also reflect the team's own understanding because the viva covers the whole codebase.
+
+## How to Run
+
+Build the project:
+
+make
+
+Run the interactive menu:
+
+./metro
+
+Run command-file mode:
+
+./metro --script tests/commands.txt
