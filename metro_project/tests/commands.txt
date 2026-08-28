@@ -1,0 +1,26 @@
+# Core smoke tests
+stats
+card 6273848113593479
+blocked 6273848113593479
+tapin 6273848113593479 157
+tapout 6273848113593479 536
+# blocked-card path
+blocked 6273849051036769
+tapin 6273849051036769 157
+# queue FIFO
+enqueue 6273848113593479
+enqueue 6273847977376119
+dequeue
+queue
+# top-up + undo
+topup 6273848113593479 100
+undo 1
+# advanced A
+replay
+# advanced B (last 20 shown)
+history 6273848113593479
+history-back
+history-forward
+history-delete
+history-back
+exit
