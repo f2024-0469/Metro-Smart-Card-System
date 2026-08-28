@@ -1,14 +1,47 @@
 # Error and edge-case checks
+
+# Blocked card cannot tap out
 blocked 6273849051036769
 tapout 6273849051036769 157
+
+# Card with no open journey cannot tap out
 tapout 6273848113593479 157
+
+# Undo when stack is empty
 undo 1
+
+# Queue error when empty
 dequeue
+
+# Invalid card registration
 register 123 BAD 0 100 ACTIVE
+
+# Duplicate card registration
 register 6273847433867183 Duplicate 00000-0000000-0 100 ACTIVE
+
+# Blocked card cannot tap in
 block 6273847433867183
+blocked 6273847433867183
 tapin 6273847433867183 157
+
+# Unblock and verify card can tap in
 unblock 6273847433867183
+blocked 6273847433867183
 tapin 6273847433867183 157
+
+# Tap out after successful tap in
 tapout 6273847433867183 395
+
+# Queue operations
+enqueue 6273847433867183
+queue
+dequeue
+queue
+
+# Invalid card lookup
+blocked 9999999999999999
+
+# System statistics
+stats
+
 exit
