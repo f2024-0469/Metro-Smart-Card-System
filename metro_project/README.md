@@ -183,14 +183,20 @@ Follow the exact disclosure/attribution rule in the course handout for any exter
 
 ## How to Run
 
-Build the project:
+From the `metro_project` directory, build the project:
 
+```bash
+make clean
 make
 
 Run the interactive menu:
 
-./metro
+./app
 
 Run command-file mode:
 
-./metro --script tests/commands.txt
+./app --script tests/commands.txt
+
+Run edge-case tests:
+
+./app --script tests/edge_cases.txt
