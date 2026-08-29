@@ -1,5 +1,5 @@
 #include "GateQueue.h"
-GateQueue::GateQueue(int c):data(new GateEntry[c]),capacity(c),head(0),tail(0),count(0){}
+GateQueue::GateQueue(int c):data(new GateEntry[c > 0 ? c : 1]),capacity(c > 0 ? c : 1),head(0),tail(0),count(0){}
 GateQueue::~GateQueue(){delete[] data;}
 void GateQueue::copyFrom(const GateQueue&o){capacity=o.capacity;data=new GateEntry[capacity];head=0;tail=o.count%capacity;count=o.count;for(int i=0;i<count;++i)data[i]=o.data[(o.head+i)%o.capacity];}
 GateQueue::GateQueue(const GateQueue&o):data(0),capacity(0),head(0),tail(0),count(0){copyFrom(o);}
