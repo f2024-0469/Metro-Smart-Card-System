@@ -124,6 +124,10 @@ static void runInteractive(MetroSystem& system) {
 }
 
 int main(int argc, char** argv) {
+
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    
     MetroSystem system("data/cards.csv", "data/journeys.csv");
     if (!system.load()) {
         std::cerr << "Warning: one or more data files could not be loaded.\n";
