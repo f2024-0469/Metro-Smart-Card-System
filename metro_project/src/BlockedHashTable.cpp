@@ -1,5 +1,5 @@
 #include "BlockedHashTable.h"
-BlockedHashTable::BlockedHashTable(int initialBuckets):buckets(0),bucketCount(initialBuckets),itemCount(0){buckets=new Node*[bucketCount];for(int i=0;i<bucketCount;++i)buckets[i]=0;}
+BlockedHashTable::BlockedHashTable(int initialBuckets):buckets(0),bucketCount(initialBuckets > 0 ? initialBuckets : 3),itemCount(0){buckets=new Node*[bucketCount];for(int i=0;i<bucketCount;++i)buckets[i]=0;}
 BlockedHashTable::~BlockedHashTable(){clear();}
 void BlockedHashTable::clear(){if(!buckets)return;for(int i=0;i<bucketCount;++i){Node*p=buckets[i];while(p){Node*n=p->next;delete p;p=n;}buckets[i]=0;}delete[] buckets;buckets=0;itemCount=0;}
 BlockedHashTable::BlockedHashTable(const BlockedHashTable&o):buckets(0),bucketCount(o.bucketCount),itemCount(0){buckets=new Node*[bucketCount];for(int i=0;i<bucketCount;++i)buckets[i]=0;copyFrom(o);}
