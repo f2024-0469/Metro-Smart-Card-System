@@ -1,7 +1,7 @@
 #include "CardHashTable.h"
 
 CardHashTable::CardHashTable(int initialBuckets)
-    : buckets(0), bucketCount(initialBuckets), itemCount(0) {
+: buckets(0), bucketCount(initialBuckets > 0 ? initialBuckets : 3), itemCount(0) {
     buckets = new Node*[bucketCount];
     for (int i = 0; i < bucketCount; ++i) buckets[i] = 0;
 }
