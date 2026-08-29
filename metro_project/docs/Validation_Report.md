@@ -78,6 +78,6 @@ Valgrind was not installed in the available validation environment. Therefore no
 | Measured-vs-claimed table | PASS |
 | Full data load/save | PASS |
 | AddressSanitizer validation | PASS |
-| Valgrind validation | Pending local run |
-| 15 GitHub commits | Pending team repository |
+| Valgrind validation | Pending — requires Linux/lab environment |
+| 15 GitHub commits | PASS — 17 commits verified |
 | Viva readiness | Requires both team members to review the full code |
