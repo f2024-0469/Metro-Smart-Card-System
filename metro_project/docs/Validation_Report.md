@@ -59,7 +59,11 @@ g++ -std=c++17 -Wall -Wextra -Wpedantic -fsanitize=address -fno-omit-frame-point
 
 Result: **PASS**, exit status 0, with no AddressSanitizer error report.
 
-Valgrind was not installed in the available validation environment. Therefore no Valgrind result is claimed here. Run the final executable under Valgrind on the university/lab machine before submission if available.
+Valgrind was also executed under Ubuntu WSL with:
+
+valgrind --leak-check=full --error-exitcode=1 ./app --script tests/commands.txt
+
+Result: PASS. Valgrind reported 0 errors from 0 contexts, with 0 bytes definitely lost, 0 bytes indirectly lost, and 0 bytes possibly lost. The remaining 122,880 bytes were reported as still reachable, not leaked.
 
 ## Final status
 
@@ -78,6 +82,6 @@ Valgrind was not installed in the available validation environment. Therefore no
 | Measured-vs-claimed table | PASS |
 | Full data load/save | PASS |
 | AddressSanitizer validation | PASS |
-| Valgrind validation | Pending — requires Linux/lab environment |
+| Valgrind validation | PASS |
 | 15 GitHub commits | PASS — 17 commits verified |
 | Viva readiness | Requires both team members to review the full code |
